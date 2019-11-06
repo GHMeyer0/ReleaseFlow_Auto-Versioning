@@ -15,9 +15,6 @@
     "execution": {
         "PowerShell3": {
             "target": "TaggingSource.ps1",
-            "platforms": [
-                "windows"
-            ],
             "workingDirectory": "$(currentDirectory)"
         }
     }

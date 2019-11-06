@@ -15,9 +15,6 @@
     "execution": {
         "PowerShell3": {
             "target": "createPullRequest.ps1",
-            "platforms": [
-                "windows"
-            ],
             "workingDirectory": "$(currentDirectory)"
         }
     }
