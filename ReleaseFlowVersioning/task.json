@@ -1,0 +1,31 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "e8e83e1d-2188-403d-b027-99ad5dbb3b92",
+    "name": "ReleaseFlowVersioning",
+    "friendlyName": "ReleaseFlow Versioning",
+    "description": "ReleaseFlow Automatic Version Generator",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "ghmeyer0@gmail.com",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 0
+    },
+    "instanceNameFormat": "Echo $(samplestring)",
+    "inputs": [
+        {
+            "name": "samplestring",
+            "type": "string",
+            "label": "Sample String",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "A sample string"
+        }
+    ],
+    "execution": {
+        "Node10": {
+            "target": "index.js"
+        }
+    }
+}

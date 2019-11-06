@@ -1,0 +1,13 @@
+{
+  "name": "ReleaseFlowVersioning",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "azure-pipelines-task-lib": "^2.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.6",
+    "@types/q": "^1.5.2"
+  }
+}
