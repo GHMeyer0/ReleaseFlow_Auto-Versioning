@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
-    "id": "e8e83e1d-2188-403d-b027-99ad5dbb3b92",
+    "id": "b7b4d303-fea4-403b-b5e2-f10df53a7d9a",
     "name": "TaggingSourcer",
     "friendlyName": "Tagging Source",
     "description": "Tagging Source With Build Number",
