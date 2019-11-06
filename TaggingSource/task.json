@@ -1,0 +1,24 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "e8e83e1d-2188-403d-b027-99ad5dbb3b92",
+    "name": "TaggingSourcer",
+    "friendlyName": "Tagging Source",
+    "description": "Tagging Source With Build Number",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "ghmeyer0@gmail.com",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 0
+    },
+    "execution": {
+        "PowerShell3": {
+            "target": "TaggingSource.ps1",
+            "platforms": [
+                "windows"
+            ],
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

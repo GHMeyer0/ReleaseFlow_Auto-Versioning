@@ -1,0 +1,42 @@
+{
+    "manifestVersion": 1,
+    "id": "ReleaseFlowVersioning",
+    "name": "Release Flow Auto-Version",
+    "version": "1.0.0",
+    "publisher": "Optiinfra",
+    "targets": [{
+        "id": "Microsoft.VisualStudio.Services"
+    }],
+    "description": "Ferramenta para versionamento com o ReleaseFlow",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "files": [{
+        "path": "CalculateVersionNumber"
+    },
+    {
+        "path": "TaggingSource"
+    }
+],
+    "contributions": [{
+        "id": "CalculateVersionNumber",
+        "type": "ms.vss-distributed-task.task",
+        "targets": [
+            "ms.vss-distributed-task.tasks"
+        ],
+        "properties": {
+            "name": "CalculateVersionNumber"
+        }
+    },
+    {
+        "id": "TaggingSource",
+        "type": "ms.vss-distributed-task.task",
+        "targets": [
+            "ms.vss-distributed-task.tasks"
+        ],
+        "properties": {
+            "name": "TaggingSource"
+        }
+    }
+]
+}
