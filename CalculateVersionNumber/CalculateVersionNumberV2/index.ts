@@ -1,16 +1,16 @@
 import tl = require('azure-pipelines-task-lib/task');
-import fs = require('fs');
 async function run() {
     try {
         let tags: any;
         let newVersion: string;
         let lastVersion: string;
         let currentVersion: any;
-        let branchName = getBranchName()
+        let branchName: string;
         let branchVersion: string;
 
         tags = getGitTags()
         lastVersion = filterLastVersion(tags).split(".");
+        branchName = getBranchName()
 
 
         if (branchName.includes("release/")) {
