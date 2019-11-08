@@ -1,0 +1,20 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+    "id": "e8e83e1d-2188-403d-b027-99ad5dbb3b92",
+    "name": "CalculateVersionNumber",
+    "friendlyName": "Calculate Version Number",
+    "description": "ReleaseFlow Automatic Version Generator",
+    "helpMarkDown": "",
+    "category": "Utility",
+    "author": "ghmeyer0@gmail.com",
+    "version": {
+        "Major": 2,
+        "Minor": 0,
+        "Patch": 1
+    },
+    "execution": {
+        "Node10": {
+            "target": "./built/index.js"
+        }
+    }
+}

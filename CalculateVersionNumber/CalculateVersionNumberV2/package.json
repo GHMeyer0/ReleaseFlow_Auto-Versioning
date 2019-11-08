@@ -1,0 +1,25 @@
+{
+  "name": "calculateversionnumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "azure-pipelines-task-lib": "^2.9.3",
+    "git-branch": "^2.0.1",
+    "isomorphic-git": "^0.70.5",
+    "nyc": "^14.1.1",
+    "simple-git": "^1.126.0"
+  },
+  "devDependencies": {
+    "@types/git-branch": "^2.0.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.6",
+    "@types/q": "^1.5.2",
+    "sync-request": "^6.1.0"
+  }
+}
