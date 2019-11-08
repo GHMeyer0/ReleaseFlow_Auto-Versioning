@@ -39,8 +39,8 @@ async function run() {
                 }
                 break;
         }
-        tl.updateBuildNumber(newVersion)   
-        
+        console.log(`${newVersion}`)
+        tl.updateBuildNumber(`${newVersion}`)   
     }
     catch (err) {
         tl.setResult(tl.TaskResult.Failed, err.message);
