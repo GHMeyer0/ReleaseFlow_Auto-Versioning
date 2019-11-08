@@ -1,16 +1,12 @@
 import tl = require('azure-pipelines-task-lib/task');
 import fs = require('fs');
-import git = require('isomorphic-git');
-import branch = require('git-branch');
-
-git.plugins.set('fs', fs)
 async function run() {
     try {
         let tags: any;
         let newVersion: string;
         let lastVersion: string;
         let currentVersion: any;
-        let branchName = branch.sync();
+        let branchName = getBranchName()
         let branchVersion: string;
 
         tags = getGitTags()
@@ -108,5 +104,12 @@ function getGitTags() {
     tags = tags.stdout.split('\n')
     tags.pop()
     return tags
+}
+function getBranchName() {
+    let branch: any;
+    branch = tl.execSync('git', 'rev-parse --abbrev-ref HEAD')
+    branch = branch.stdout.split('\n')
+    branch.pop()
+    return branch[0]
 }
 run();
