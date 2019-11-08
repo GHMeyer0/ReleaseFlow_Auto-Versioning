@@ -43,11 +43,7 @@ async function run() {
                 }
                 break;
         }
-        tl.updateBuildNumber(newVersion)
-        console.log(newVersion)
-        //tl.execSync("git", `tag ${newVersion} -m 'AA'`)
-
-        
+        tl.updateBuildNumber(newVersion)   
         
     }
     catch (err) {
