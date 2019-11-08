@@ -1,19 +1,19 @@
 import tl = require('azure-pipelines-task-lib/task');
-import fs = require('fs')
-import git = require('isomorphic-git')
+import fs = require('fs');
+import git = require('isomorphic-git');
 import branch = require('git-branch');
 
 git.plugins.set('fs', fs)
 async function run() {
     try {
-        let tags = await git.listTags({ dir: '.' });
-        let tag: any;
+        let tags: any;
         let newVersion: string;
         let lastVersion: string;
         let currentVersion: any;
         let branchName = branch.sync();
         let branchVersion: string;
 
+        tags = getGitTags()
         lastVersion = filterLastVersion(tags).split(".");
 
 
@@ -26,7 +26,7 @@ async function run() {
             case "master":
                 currentVersion = filterLastVersion(tags, "-beta");
                 if (currentVersion) {
-                    currentVersion = tag.split("-")[0].split(".");
+                    currentVersion = currentVersion.split("-")[0].split(".");
                 }
                 if (lastVersion[0] == currentVersion[0] && lastVersion[1] == currentVersion[1]) {
                     newVersion = `${currentVersion[0]}.${currentVersion[1]}.${parseInt(currentVersion[2]) + 1}-beta`;
@@ -34,7 +34,6 @@ async function run() {
                 else {
                     newVersion = `${lastVersion[0]}.${lastVersion[1]}.1-beta`;
                 }
-                console.log(newVersion);
                 break;
             case "release":
                 if (branchVersion == `${lastVersion[0]}.${lastVersion[1]}`) {
@@ -44,8 +43,9 @@ async function run() {
                 }
                 break;
         }
-
-        tl.execSync("git", `tag ${newVersion} -m 'AA'`)
+        tl.updateBuildNumber(newVersion)
+        console.log(newVersion)
+        //tl.execSync("git", `tag ${newVersion} -m 'AA'`)
 
         
         
@@ -104,5 +104,13 @@ function filterLastVersion(tags: any[], _betaSulfix = "") {
     });
 
     return tags[0];
+}
+
+function getGitTags() {
+    let tags: any;
+    tags = tl.execSync('git', 'tag')
+    tags = tags.stdout.split('\n')
+    tags.pop()
+    return tags
 }
 run();
